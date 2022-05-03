@@ -93,6 +93,16 @@ pageClass: routes
 
 </Route>
 
+## syosetu
+
+### 章节更新
+
+<Route author="huangliangshusheng" example="/syosetu/chapter/n1976ey" path="/syosetu/chapter/:id" :paramsDesc="['小说 id, 可在对应小说页 URL 中找到']">
+
+举例网址：<https://ncode.syosetu.com/n1976ey/>
+
+</Route>
+
 ## UU 看书
 
 ### 小说更新
@@ -416,6 +426,18 @@ count 的取值范围为 1-12，为防止请求次数过多，推荐设置为 5 
 | 网址                              | 对应路由               |
 | ------------------------------- | ------------------ |
 | <http://news.bioon.com/biology> | /shengwugu/biology |
+
+## 书伴
+
+### 分类
+
+<Route author="OdinZhang" example="/bookfere/skills" path="/bookfere/:category" :paramsDesc="['分类名']">
+
+| 每周一书   | 使用技巧   | 图书推荐  | 新闻速递 | 精选短文  |
+| ------ | ------ | ----- | ---- | ----- |
+| weekly | skills | books | news | essay |
+
+</Route>
 
 ## 书趣阁
 

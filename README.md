@@ -9,6 +9,7 @@
 [![npm publish](https://img.shields.io/github/workflow/status/DIYgod/RSSHub/publish/master?label=npm%20publish&logo=npm&style=flat-square)](https://www.npmjs.com/package/rsshub)
 [![docker publish](https://img.shields.io/github/workflow/status/DIYgod/RSSHub/%5Bdocker%5D%20CI%20for%20releases/master?label=docker%20publish&logo=docker&style=flat-square)](https://hub.docker.com/r/diygod/rsshub)
 [![test](https://img.shields.io/github/workflow/status/DIYgod/RSSHub/test/master?label=test&logo=github&style=flat-square)](https://github.com/DIYgod/RSSHub/actions/workflows/test.yml?query=event%3Apush+branch%3Amaster)
+[![Test coverage](https://img.shields.io/codecov/c/github/DIYgod/RSSHub.svg?style=flat-square&logo=codecov)](https://app.codecov.io/gh/DIYgod/RSSHub/branch/master)
 
 ## Introduction
 
@@ -38,7 +39,7 @@ RSSHub 是一个开源、简单易用、易于扩展的 RSS 生成器，可以�
 
 ### Sponsors
 
-[Sayori Studio](https://t.me/SayoriStudio) . [Sion Kazama](https://blog.sion.moe) . [琚致远](https://wineso.me/) . [Rolly RSS 阅读器](https://www.coolapk.com/apk/239500) . [mokeyjay](https://www.mokeyjay.com/) . [萌开源联盟](https://www.moeunion.com) . [hooke007](https://github.com/hooke007/MPV_lazy) . [feeds.pub](https://feeds.pub)
+[Sayori Studio](https://t.me/SayoriStudio) . [Sion Kazama](https://blog.sion.moe) . [琚致远](https://wineso.me/) . [Rolly RSS 阅读器](https://www.coolapk.com/apk/239500) . [mokeyjay](https://www.mokeyjay.com/) . [萌开源联盟](https://www.moeunion.com) . [hooke007](https://github.com/hooke007/MPV_lazy) . [feeds.pub](https://feeds.pub) . [KINGX@安全引擎](http://cve.today/)
 
 [![](https://opencollective.com/static/images/become_sponsor.svg)](https://docs.rsshub.app/en/support/)
 

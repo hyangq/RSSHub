@@ -96,7 +96,7 @@ pageClass: routes
 
 ### 德阳市政府公开信息
 
-<Route author="zytomorrow" example="/gov/sichuan/deyang/govpulicinfo/德阳市市/市人社局" path="/gov/sichuan/deyang/govpulicinfo/:countyName/:institutionName?" :paramsDesc="['区县名。德阳市、绵竹市、广汉市、什邡市、中江县、罗江区、旌阳区、高新区', '单位名称。可直接输入网页显示单位名称']"/>
+<Route author="zytomorrow" example="/gov/sichuan/deyang/govpulicinfo/绵竹市" path="/gov/sichuan/deyang/govpulicinfo/:countyName" :paramsDesc="['区县名（**其他区县整改中，暂时只支持`绵竹市`**）。德阳市、绵竹市、广汉市、什邡市、中江县、罗江区、旌阳区、高新区']"/>
 
 ## 广东省人民政府
 
@@ -155,6 +155,16 @@ pageClass: routes
 #### 政务公开
 
 <Route author="Fatpandac" example="/gov/huizhou/zwgk/jgdt" path="/gov/huizhou/zwgk/:category?" :paramsDesc="['资讯类别，可以从网址中得到，默认为政务要闻']"/>
+
+## 国家广播电视总局
+
+### 分类
+
+<Route author="yuxinliu-alex" example="/gov/nrta/news" path="/gov/nrta/news/:category?" :paramsDesc="['资讯类别， 可从地址中获取，默认为总局要闻']"/>
+
+| 总局要闻 | 公告公示 | 工作动态 |  其他 |
+| :--: | :--: | :--: | :-: |
+|  112 |  113 |  114 |     |
 
 ## 国家税务总局
 
@@ -923,9 +933,9 @@ pageClass: routes
 
 <Route author="Crawler995" example="/gov/moe/policy_anal" path="/gov/moe/:type" :paramsDesc="['分类名']">
 
-|     政策解读    |     最新文件    |  公告公示  |       教育部简报       |
-| :---------: | :---------: | :----: | :---------------: |
-| policy_anal | newest_file | notice | edu_ministry_news |
+|     政策解读    |     最新文件    |  公告公示  |       教育部简报       |      教育要闻      |
+| :---------: | :---------: | :----: | :---------------: | :------------: |
+| policy_anal | newest_file | notice | edu_ministry_news | edu_focus_news |
 
 </Route>
 

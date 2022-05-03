@@ -360,6 +360,12 @@ pageClass: routes
 
 </Route>
 
+## qBittorrent
+
+### 消息
+
+<Route author="TonyRL" example="/qbittorrent/news" path="/qbittorrent/news" radar="1" rssbud="1"/>
+
 ## QNAP
 
 ### Release Notes
@@ -501,6 +507,12 @@ pageClass: routes
 ### What's New
 
 <Route author="nczitzk" example="/xyplorer/whatsnew" path="/xyplorer/whatsnew"/>
+
+## Zotero
+
+### 版本历史
+
+<Route author="jasongzy" example="/zotero/versions" path="/zotero/versions"/>
 
 ## 怪物猎人世界
 

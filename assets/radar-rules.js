@@ -221,20 +221,6 @@
     'copymanga.com': { _name: '拷贝漫画', www: [{ title: '漫画更新', docs: 'https://docs.rsshub.app/anime.html#kao-bei-man-hua', source: '/comic/:id/', target: '/manhuagui/comic/:id/5' }] },
     'pgyer.com': { _name: '蒲公英应用分发', www: [{ title: 'app更新', docs: 'https://docs.rsshub.app/program-update.html#pu-gong-ying-ying-yong-fen-fa', source: '/:app', target: '/pgyer/:app' }] },
     'pianyuan.la': { _name: '片源网', '.': [{ title: '电影和剧集', docs: 'https://docs.rsshub.app/multimedia.html#pian-yuan', source: '/' }] },
-    'sspai.com': {
-        _name: '少数派',
-        '.': [
-            { title: '最新上架付费专栏', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/series', target: '/sspai/series' },
-            { title: 'Matrix', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/matrix', target: '/sspai/matrix' },
-            { title: '专栏', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/column/:id', target: '/sspai/column/:id' },
-            { title: '作者动态', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/u/:id/updates', target: '/sspai/activity/:id' },
-            { title: '作者已发布文章', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/u/:id/posts', target: '/sspai/author/:id' },
-            { title: '专题', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/topics', target: '/sspai/topics' },
-            { title: '专题内文章更新', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/topic/:id', target: '/sspai/topic/:id' },
-            { title: '标签订阅', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: '/tag/:keyword', target: '/sspai/tag/:keyword' },
-        ],
-        shortcuts: [{ title: 'Shortcuts Gallery', docs: 'https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai', source: ['', '/*tpath'], target: '/sspai/shortcuts' }],
-    },
     'baidu.com': {
         _name: '贴吧',
         tieba: [
@@ -511,21 +497,6 @@
             { title: '教务处实践科学科通知', docs: 'https://docs.rsshub.app/university.html#yun-nan-da-xue', source: '/*', target: '/jwc/4' },
         ],
         grs: [{ title: '研究生院通知', docs: 'https://docs.rsshub.app/university.html#yun-nan-da-xue', source: '/*', target: '' }],
-    },
-    'zju.edu.cn': {
-        _name: '浙江大学',
-        cst: [
-            { title: '软件学院 - 全部通知', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: ['', '/*tpath'], target: '/zju/cst/0' },
-            { title: '软件学院 - 招生信息', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/32178/list.htm', target: '/zju/cst/1' },
-            { title: '软件学院 - 教务管理', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36216/list.htm', target: '/zju/cst/2' },
-            { title: '软件学院 - 论文管理', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36217/list.htm', target: '/zju/cst/3' },
-            { title: '软件学院 - 思政工作', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36192/list.htm', target: '/zju/cst/4' },
-            { title: '软件学院 - 评奖评优', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36228/list.htm', target: '/zju/cst/5' },
-            { title: '软件学院 - 实习就业', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36193/list.htm', target: '/zju/cst/6' },
-            { title: '软件学院 - 国际实习', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36235/list.htm', target: '/zju/cst/7' },
-            { title: '软件学院 - 国内合作科研', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36194/list.htm', target: '/zju/cst/8' },
-            { title: '软件学院 - 国际合作科研', docs: 'https://docs.rsshub.app/university.html#zhe-jiang-da-xue', source: '/36246/list.htm', target: '/zju/cst/9' },
-        ],
     },
     'kuaidi100.com': {
         _name: '快递100',
@@ -1052,12 +1023,6 @@
                 target: (params) => `/trakt/collection/${params.username}/${params.type || 'all'}`,
             },
         ],
-    },
-    'eagle.cool': {
-        _name: 'Eagle',
-        cn: [{ title: '更新日志', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/changelog', target: '/eagle/changelog/cn' }],
-        tw: [{ title: '更新日誌', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/changelog', target: '/eagle/changelog/tw' }],
-        en: [{ title: 'Release Notes', docs: 'https://docs.rsshub.app/program-update.html#eagle', source: '/changelog', target: '/eagle/changelog/en' }],
     },
     'furaffinity.net': {
         _name: 'Fur Affinity',
