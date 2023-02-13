@@ -1,4 +1,66 @@
 {
+  "163.com": {
+    "_name": "网易",
+    "music": [
+      {
+        "title": "云音乐 - 用户歌单",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/"
+      },
+      {
+        "title": "云音乐 - 歌单歌曲",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/"
+      },
+      {
+        "title": "云音乐 - 歌手专辑",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/"
+      },
+      {
+        "title": "云音乐 - 电台节目",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/"
+      }
+    ],
+    "y.music": [
+      {
+        "title": "云音乐 - 用户歌单",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/m/user"
+      },
+      {
+        "title": "云音乐 - 歌单歌曲",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/m/playlist"
+      },
+      {
+        "title": "云音乐 - 歌手专辑",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": "/m/album"
+      },
+      {
+        "title": "云音乐 - 播单声音",
+        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
+        "source": [
+          "/m/radio",
+          "/m/djradio"
+        ]
+      }
+    ]
+  },
+  "591.com.tw": {
+    "_name": "591 租屋網",
+    "rent": [
+      {
+        "title": "所有物件",
+        "docs": "https://docs.rsshub.app/other.html#_591-zu-wu-wang",
+        "source": [
+          "/"
+        ]
+      }
+    ]
+  },
   "2047.name": {
     "_name": "2047",
     ".": [
@@ -8066,6 +8128,19 @@
       }
     ]
   },
+  "hitsz.edu.cn": {
+    "_name": "哈尔滨工业大学（深圳）",
+    ".": [
+      {
+        "title": "新闻中心",
+        "docs": "https://docs.rsshub.app/university.html#ha-er-bin-gong-ye-da-xue-shen-zhen",
+        "source": [
+          "/article/:category?",
+          "/subject/:category?"
+        ]
+      }
+    ]
+  },
   "hitwh.edu.cn": {
     "_name": "哈尔滨工业大学（威海）",
     ".": [
@@ -13022,78 +13097,6 @@
           "/"
         ],
         "target": "/neatdownloadmanager/download/:os?"
-      }
-    ]
-  },
-  "163.com": {
-    "_name": "网易",
-    "ds": [
-      {
-        "title": "大神",
-        "docs": "https://docs.rsshub.app/game.html#wang-yi-da-shen",
-        "source": "/user/:id",
-        "target": "/netease/ds/:id"
-      }
-    ],
-    "open": [
-      {
-        "title": "公开课 - 精品课程",
-        "docs": "https://docs.rsshub.app/study.html#wang-yi-gong-kai-ke",
-        "source": "/",
-        "target": "/open163/vip"
-      },
-      {
-        "title": "公开课 - 最新课程",
-        "docs": "https://docs.rsshub.app/study.html#wang-yi-gong-kai-ke",
-        "source": "/",
-        "target": "/open163/latest"
-      }
-    ],
-    "music": [
-      {
-        "title": "云音乐 - 用户歌单",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/"
-      },
-      {
-        "title": "云音乐 - 歌单歌曲",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/"
-      },
-      {
-        "title": "云音乐 - 歌手专辑",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/"
-      },
-      {
-        "title": "云音乐 - 电台节目",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/"
-      }
-    ],
-    "y.music": [
-      {
-        "title": "云音乐 - 用户歌单",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/m/user"
-      },
-      {
-        "title": "云音乐 - 歌单歌曲",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/m/playlist"
-      },
-      {
-        "title": "云音乐 - 歌手专辑",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": "/m/album"
-      },
-      {
-        "title": "云音乐 - 播单声音",
-        "docs": "https://docs.rsshub.app/multimedia.html#wang-yi-yun-yin-yue",
-        "source": [
-          "/m/radio",
-          "/m/djradio"
-        ]
       }
     ]
   },
