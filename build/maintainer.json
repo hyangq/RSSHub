@@ -101,6 +101,12 @@
     "/423down/:category/:type": [
         "Fatpandac"
     ],
+    "/500px/tribe/set/:id": [
+        "TonyRL"
+    ],
+    "/500px/user/works/:id": [
+        "TonyRL"
+    ],
     "/50forum/": [
         "sddiky"
     ],
@@ -4636,6 +4642,9 @@
     ],
     "/wechat/uread/:userid": [
         "kt286"
+    ],
+    "/wechat/wechat2rss/:id": [
+        "TonyRL"
     ],
     "/wechat/wxnmh/:id": [
         "laampui"
