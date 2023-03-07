@@ -278,6 +278,16 @@ pageClass: routes
 
 <Route author="markmingjie" example="/bjfu/kjc" path="/bjfu/kjc" />
 
+### 信息学院通知
+
+<Route author="wzc-blog" example="/bjfu/it/xyxw" path="/bjfu/it/:type" :paramsDesc="['通知类别']">
+
+| 学院新闻 | 科研动态 | 本科生培养 | 研究生培养 |
+| ---- | ---- | ----- | ----- |
+| xyxw | kydt | pydt  | pydt2 |
+
+</Route>
+
 ### 教务处通知公告
 
 <Route author="markmingjie" example="/bjfu/jwc/jwkx" path="/bjfu/jwc/:type" :paramsDesc="['通知类别']">
@@ -310,13 +320,27 @@ pageClass: routes
 
 </Route>
 
-### 信息学院通知
+### 图书馆通知
 
-<Route author="wzc-blog" example="/bjfu/it/xyxw" path="/bjfu/it/:type" :paramsDesc="['通知类别']">
+<Route author="TonyRL" example="/bnu/lib/zydt" path="/bjfu/lib/:category?" :paramsDesc="['分类，见下表，默认为 `zydt`']" radar="1">
 
-| 学院新闻 | 科研动态 | 本科生培养 | 研究生培养 |
-| ---- | ---- | ----- | ----- |
-| xyxw | kydt | pydt  | pydt2 |
+| 资源动态 | 新闻动态 | 系列讲座  |
+| ---- | ---- | ----- |
+| zydt | xwdt | xljz1 |
+
+</Route>
+
+### 党委学生工作部辅导员发展中心
+
+<Route author="TonyRL" example="/bnu/fdy/tzgg/dwjs" path="/bnu/fdy/:path*" :paramsDesc="['路径，默认为 `tzgg`']" radar="1">
+
+::: tip 提示
+
+路径处填写对应页面 URL 中 `https://fdy.bnu.edu.cn/` 和 `/index.htm` 之间的字段。下面是一个例子。
+
+若订阅 [通知公告 > 队伍建设](https://fdy.bnu.edu.cn/tzgg/dwjs/index.htm) 则将对应页面 URL <https://fdy.bnu.edu.cn/tzgg/dwjs/index.htm> 中 `https://fdy.bnu.edu.cn/` 和 `/index.htm` 之间的字段 `tzgg/dwjs` 作为路径填入。此时路由为 [`/bnu/fdy/tzgg/dwjs`](https://rsshub.app/bnu/fdy/tzgg/dwjs)
+
+:::
 
 </Route>
 
@@ -1289,6 +1313,18 @@ category 列表：
 ### 今日工大 - 通知公告
 
 <Route author="raptazure" example="/hitwh/today" path="/hitwh/today" radar="1" rssbud="1"/>
+
+## 哈尔滨理工大学
+
+### 教务处
+
+<Route author="LenaNouzen" example="/hrbust/jwzx" path="/hrbust/jwzx/:type?/:page?" :paramsDesc="['分类名，默认为教务公告', '文章数，默认为12']" >
+
+| 名师风采 | 热点新闻 | 教务公告 | 教学新闻 |
+| ---- | ---- | ---- | ---- |
+| 351  | 353  | 354  | 355  |
+
+</Route>
 
 ## 海南大学
 
@@ -3009,6 +3045,10 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 ## 西南交通大学
 
+### 就业招聘信息
+
+<Route author="qizidog" example="/swjtu/jyzpxx" path="/swjtu/jyzpxx"/>
+
 ### 交通运输与物流学院
 
 #### 研究生通知
@@ -3593,19 +3633,13 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 ## 中南大学
 
-### 招聘信息
+### 就业信息网招聘信息
 
-<Route author="csuhan" example="/csu/job" path="/csu/job/:type?" :paramsDesc="['招聘类型']">
-
-| 招聘类型 | 本部招聘 | 湘雅招聘 | 铁道招聘 | 在线招聘 | 事业招考 |
-| ---- | ---- | ---- | ---- | ---- | ---- |
-| 参数   | 1    | 2    | 3    | 4    | 5    |
-
-</Route>
+<Route author="TonyRL" example="/csu/career" path="/csu/career" radar="1" />
 
 ### 计算机学院
 
-<Route author="j1g5awi" example="/csu/cse" path="/csu/cse/:type?" :paramsDesc="['类型']">
+<Route author="j1g5awi" example="/csu/cse" path="/csu/cse/:type?" :paramsDesc="['类型']" radar="1">
 
 | 类型 | 学院新闻 | 通知公告 | 学术信息 | 学工动态 | 科研动态 |
 | -- | ---- | ---- | ---- | ---- | ---- |
@@ -3615,7 +3649,7 @@ jsjxy.hbut.edu.cn 证书链不全，自建 RSSHub 可设置环境变量 NODE_TLS
 
 ### 校长信箱
 
-<Route author="j1g5awi" example="/csu/mail" path="/csu/mail/:type?" :paramsDesc="['类型']">
+<Route author="j1g5awi" example="/csu/mail" path="/csu/mail/:type?" :paramsDesc="['类型']" radar="1">
 
 | 类型 | 校长信箱 | 党委信箱 |
 | -- | ---- | ---- |

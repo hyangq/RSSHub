@@ -291,6 +291,44 @@ pageClass: routes
 
 <Route author="nczitzk" example="/dayone/blog" path="/dayone/blog"/>
 
+## DCFever
+
+### 新聞中心
+
+<Route author="TonyRL" example="/dcfever/news" path="/dcfever/news/:type?" :paramsDesc="['分類，預設為所有新聞']" radar="1">
+
+| 所有新聞 | 攝影器材   | 手機通訊   | 汽車熱話 | 攝影文化        | 影片攝錄        | 測試報告    | 生活科技   | 攝影技巧      |
+| ---- | ------ | ------ | ---- | ----------- | ----------- | ------- | ------ | --------- |
+|      | camera | mobile | auto | photography | videography | reviews | gadget | technique |
+
+</Route>
+
+### 測試報告
+
+<Route author="TonyRL" example="/dcfever/reviews/cameras" path="/dcfever/reviews/:type?" :paramsDesc="['分類，預設為 `cameras`']" radar="1">
+
+| 相機及鏡頭   | 手機平板   | 試車報告 |
+| ------- | ------ | ---- |
+| cameras | phones | cars |
+
+</Route>
+
+### 二手市集
+
+<Route author="TonyRL" example="/dcfever/trading/1" path="/dcfever/trading/:id" :paramsDesc="['分類 ID，見下表']" radar="1">
+
+[所有物品分類](https://www.dcfever.com/trading/index.php#all_cats)
+
+| 攝影產品 | 電腦 | 手機通訊 | 影音產品 | 遊戲機、模型 | 電器傢俱 | 潮流服飾 | 手錶 | 單車及運動 | 其它 |
+| ---- | -- | ---- | ---- | ------ | ---- | ---- | -- | ----- | -- |
+| 1    | 2  | 3    | 44   | 43     | 104  | 45   | 99 | 109   | 4  |
+
+</Route>
+
+### 二手市集 - 物品搜尋
+
+<Route author="TonyRL" example="/dcfever/trading/search/Sony" path="/dcfever/trading/search/:keyword/:mainCat?" :paramsDesc="['關鍵字', '主要分類 ID，見上表']" radar="1" />
+
 ## DeepL
 
 ### Blog
@@ -1056,6 +1094,12 @@ IPFS 网关有可能失效，那时候换成其他网关。
 | 天然災害 | 168 |
 
 </Route>
+
+## Phoronix
+
+### 新闻与评测
+
+<Route author="oppliate" example="/phoronix/news_topic/Intel" path="/phoronix/:page/:queryOrItem?" :paramsDesc="['页面', '对 `category` 页面是分类项目 `item`，对其它页面是主题 `q`，可以在网站顶部导航栏各项目链接里找出。如 `https://www.phoronix.com/scan.php?page=category&item=Computers` 对应 `/phoronix/category/Computers`']" radar="1"/>
 
 ## PMCAFF
 
@@ -2582,12 +2626,6 @@ others = 热点新闻 + 滚动新闻
 
 </Route>
 
-## 经济 50 人论坛
-
-### 专家文章
-
-<Route author="sddiky" example="/50forum" path="/50forum"/>
-
 ## 鲸跃汽车
 
 ### 首页
@@ -3902,6 +3940,12 @@ column 为 third 时可选的 category:
 
 <Route author="nczitzk" example="/tam/forecast" path="/tam/forecast"/>
 
+## 微小领
+
+### 微信公众号
+
+<Route author="TonyRL" example="/wxkol/show/3590876722" path="/wxkol/show/:id" :paramsDesc="['公众号 id，可在 URL 找到']" radar="1"/>
+
 ## 微信
 
 ::: tip 提示
@@ -3912,15 +3956,15 @@ column 为 third 时可选的 category:
 
 ### 公众号（CareerEngine 来源）
 
-<Route author="HenryQW" example="/wechat/ce/595a5b14d7164e53908f1606" path="/wechat/ce/:id" :paramsDesc="['公众号 id, 在 [CareerEngine](https://search.careerengine.us/) 搜索公众号，通过 URL 中找到对应的公众号 id']" anticrawler="1"/>
+<Route author="HenryQW" example="/wechat/ce/595a5b14d7164e53908f1606" path="/wechat/ce/:id" :paramsDesc="['公众号 id，在 [CareerEngine](https://search.careerengine.us/) 搜索公众号，通过 URL 中找到对应的公众号 id']" anticrawler="1"/>
 
 ### 公众号（二十次幂来源）
 
-<Route author="sanmmm" example="/wechat/ershicimi/813oxJOl" path="/wechat/ershicimi/:id" :paramsDesc="['公众号id, 打开公众号页, 在 URL 中找到 id']" anticrawler="1"/>
+<Route author="sanmmm" example="/wechat/ershicimi/813oxJOl" path="/wechat/ershicimi/:id" :paramsDesc="['公众号id，打开公众号页，在 URL 中找到 id']" anticrawler="1"/>
 
 ### 公众号（Telegram 频道来源）
 
-<Route author="LogicJake Rongronggg9" example="/wechat/tgchannel/lifeweek" path="/wechat/tgchannel/:id/:mpName?/:searchQueryType?" :paramsDesc="['公众号绑定频道 id', '欲筛选的公众号全名（URL-encoded, 精确匹配），在频道订阅了多个公众号时可选用', '搜索查询类型，见下表']">
+<Route author="LogicJake Rongronggg9" example="/wechat/tgchannel/lifeweek" path="/wechat/tgchannel/:id/:mpName?/:searchQueryType?" :paramsDesc="['公众号绑定频道 id', '欲筛选的公众号全名（URL-encoded，精确匹配），在频道订阅了多个公众号时可选用', '搜索查询类型，见下表']">
 
 | 搜索查询类型 | 将使用的搜索关键字 |            适用于           |
 | :----: | :-------: | :----------------------: |
@@ -3953,6 +3997,10 @@ column 为 third 时可选的 category:
 ### 公众号（Wechat2RSS 来源）
 
 <Route author="TonyRL" example="/wechat/wechat2rss/5b925323244e9737c39285596c53e3a2f4a30774" path="/wechat/wechat2rss/:id" :paramsDesc="['公众号 id，打开 `https://wechat2rss.xlab.app/posts/list/`，在 URL 中找到 id；注意不是公众号页的 id，而是订阅的 id']" radar="1"/>
+
+### 公众号（微小领来源）
+
+见 [#微小领](#wei-xiao-ling)
 
 ### 公众号栏目 (非推送 & 历史消息)
 
@@ -4462,18 +4510,6 @@ wechat-feeds 来源[已停止更新](https://github.com/hellodword/wechat-feeds/
 | 学会要闻        | 学会动态     | 科技新闻     |
 | ----------- | -------- | -------- |
 | Information | Dynamics | TechNews |
-
-</Route>
-
-## 中国计算机学会
-
-### 新闻
-
-<Route author="nczitzk" example="/ccf/news" path="/ccf/news/:category?" :paramsDesc="['分类，见下表，默认为 CCF 新闻']">
-
-| CCF 新闻     | CCF 聚焦 | ACM 信息   |
-| ---------- | ------ | -------- |
-| Media_list | Focus  | ACM_News |
 
 </Route>
 
