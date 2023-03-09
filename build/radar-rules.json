@@ -1811,6 +1811,17 @@
         ],
         "target": "/arcteryx/new-arrivals/:country/:gender"
       }
+    ],
+    "regear": [
+      {
+        "title": "Regear 新发布",
+        "docs": "https://docs.rsshub.app/shopping.html#arcteryx",
+        "source": [
+          "/shop/new-arrivals",
+          "/"
+        ],
+        "target": "/arcteryx/regear/new-arrivals"
+      }
     ]
   },
   "arknights.jp": {
@@ -15102,6 +15113,18 @@
       }
     ]
   },
+  "patagonia.com": {
+    "_name": "Patagonia",
+    ".": [
+      {
+        "title": "New Arrivals",
+        "docs": "https://docs.rsshub.app/shopping.html#patagonia",
+        "source": [
+          "/shop/*new-arrivals"
+        ]
+      }
+    ]
+  },
   "penguinrandomhouse.com": {
     "_name": "Penguin Random House",
     ".": [
@@ -17311,6 +17334,20 @@
         "docs": "https://docs.rsshub.app/shopping.html#shen-me-zhi-de-mai",
         "source": "/member/:uid/baoliao",
         "target": "/smzdm/baoliao/:uid"
+      }
+    ]
+  },
+  "snowpeak.com": {
+    "_name": "Snow Peak",
+    ".": [
+      {
+        "title": "New Arrivals(USA)",
+        "docs": "https://docs.rsshub.app/shopping.html#snow-peak",
+        "source": [
+          "/collections/new-arrivals",
+          "/"
+        ],
+        "target": "/snowpeak/us/new-arrivals"
       }
     ]
   },
@@ -21551,6 +21588,78 @@
         "docs": "https://docs.rsshub.app/government.html",
         "source": "/",
         "target": "/zjgtjy/bcgg"
+      }
+    ]
+  },
+  "zjol.com.cn": {
+    "_name": "浙江在线",
+    ".": [
+      {
+        "title": "浙报集团系列报刊",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ]
+      }
+    ],
+    "zjrb": [
+      {
+        "title": "浙江日报",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/zjol/paper/zjrb"
+      }
+    ],
+    "qjwb": [
+      {
+        "title": "钱江晚报",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/zjol/paper/qjwb"
+      }
+    ],
+    "msb": [
+      {
+        "title": "美术报",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/zjol/paper/msb"
+      }
+    ],
+    "zjlnb": [
+      {
+        "title": "浙江老年报",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/zjol/paper/zjlnb"
+      }
+    ],
+    "zjfzb": [
+      {
+        "title": "浙江法制报",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/zjol/paper/zjfzb"
+      }
+    ],
+    "jnyb": [
+      {
+        "title": "江南游报",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhe-jiang-zai-xian-zhe-bao-ji-tuan-xi-lie-bao-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/zjol/paper/jnyb"
       }
     ]
   },

@@ -360,6 +360,9 @@
     "/arcteryx/new-arrivals/:country/:gender": [
         "NavePnow"
     ],
+    "/arcteryx/regear/new-arrivals": [
+        "NavePnow"
+    ],
     "/arknights/announce/:platform?/:group?": [
         "swwind"
     ],
@@ -1690,7 +1693,7 @@
     "/github/branches/:user/:repo": [
         "max-arnold"
     ],
-    "/github/comments/:user/:repo/:type/:number": [
+    "/github/comments/:user/:repo/:number": [
         "TonyRL"
     ],
     "/github/contributors/:user/:repo/:order?/:anon?": [
@@ -3536,6 +3539,9 @@
     "/paradigm/writing": [
         "Fatpandac"
     ],
+    "/patagonia/patagonia/new-arrivals/:category": [
+        "NavePnow"
+    ],
     "/penguin-random-house/the-read-down": [
         "StevenRCE0"
     ],
@@ -4139,6 +4145,9 @@
     ],
     "/smzdm/ranking/:rank_type/:rank_id/:hour": [
         "DIYgod"
+    ],
+    "/snowpeak/us/new-arrivals": [
+        "NavePnow"
     ],
     "/sobooks/tag/:id?": [
         "nczitzk"
@@ -5346,6 +5355,9 @@
     ],
     "/zjgtjy/:type?": [
         "Fatpandac"
+    ],
+    "/zjol/paper/:id?": [
+        "nczitzk"
     ],
     "/zju/career/:type": [
         "Caicailiushui"
