@@ -4661,6 +4661,29 @@
       }
     ]
   },
+  "cztv.com": {
+    "_name": "新蓝网",
+    ".": [
+      {
+        "title": "浙江新闻联播",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xin-lan-wang-zhe-jiang-guang-bo-dian-shi-ji-tuan",
+        "source": [
+          "/videos/zjxwlb",
+          "/"
+        ],
+        "target": "/cztv/zjxwlb"
+      },
+      {
+        "title": "浙江新闻联播-每日合集",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xin-lan-wang-zhe-jiang-guang-bo-dian-shi-ji-tuan",
+        "source": [
+          "/videos/zjxwlb",
+          "/"
+        ],
+        "target": "/cztv/zjxwlb/daily"
+      }
+    ]
+  },
   "dahecube.com": {
     "_name": "大河财立方",
     ".": [
@@ -21215,6 +21238,18 @@
         "docs": "https://docs.rsshub.app/game.html#you-yan-she",
         "source": "/docs",
         "target": "/yystv/docs"
+      }
+    ]
+  },
+  "zagg.com": {
+    "_name": "New Arrivals",
+    ".": [
+      {
+        "title": "Zagg - New Arrivals",
+        "docs": "https://docs.rsshub.app/shopping.html#zagg",
+        "source": [
+          "/en_us/new-arrivals"
+        ]
       }
     ]
   },

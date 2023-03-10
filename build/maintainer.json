@@ -1110,6 +1110,12 @@
     "/cw/today": [
         "TonyRL"
     ],
+    "/cztv/zjxwlb": [
+        "yhkang"
+    ],
+    "/cztv/zjxwlb/daily": [
+        "yhkang"
+    ],
     "/dahecube/:type?": [
         "linbuxiao"
     ],
@@ -5226,6 +5232,9 @@
     ],
     "/yystv/docs": [
         "HaitianLiu"
+    ],
+    "/zagg/new-arrivals/:query?": [
+        "NavePnow"
     ],
     "/zaker/:type/:id?": [
         "LogicJake",
