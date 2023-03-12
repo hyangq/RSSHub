@@ -6677,6 +6677,17 @@
         source:[ "/blog",
           "/" ],
         target:"/macfilos/blog" } ] },
+  "magazinelib.com":{ _name:"magazineLib",
+    ".":[ { title:"Latest Magazine",
+        docs:"https://docs.rsshub.app/reading.html#magazinelib",
+        source:[ "/" ],
+        target:(_, url) => {
+                    const query = new URL(url).searchParams.get('s');
+                    if (query === null) {
+                        return '/magazinelib/latest-magazine';
+                    }
+                    return `/magazinelib/latest-magazine/${query}`;
+                } } ] },
   "mangadex.org":{ _name:"MangaDex",
     ".":[ { title:"漫画更新",
         docs:"https://docs.rsshub.app/anime.html#mangadex",
@@ -10737,6 +10748,15 @@
         docs:"https://docs.rsshub.app/blog.html#v1tx",
         source:[ "/" ],
         target:"/v1tx" } ] },
+  "vcb-s.com":{ _name:"VCB-Studio",
+    ".":[ { title:"最新文章",
+        docs:"https://docs.rsshub.app/anime.html#vcb-studio",
+        source:[ "/" ],
+        target:"/vcb-s" },
+      { title:"分类文章",
+        docs:"https://docs.rsshub.app/anime.html#vcb-studio",
+        source:[ "/archives/category/:cate" ],
+        target:"/vcb-s/category/:cate" } ] },
   "baden-wuerttemberg.de":{ _name:"Constitutional Court of Baden-Württemberg (Germany)",
     verfgh:[ { title:"Press releases",
         docs:"https://docs.rsshub.app/en/government.html#constitutional-court-of-baden-wurttemberg-germany",

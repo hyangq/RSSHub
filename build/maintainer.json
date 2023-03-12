@@ -3000,6 +3000,9 @@
     "/macfilos/blog": [
         "nczitzk"
     ],
+    "/magazinelib/latest-magazine/:query?": [
+        "NavePnow"
+    ],
     "/mangadex/:id/:lang?": [
         "vzz64"
     ],
@@ -4773,6 +4776,12 @@
     ],
     "/v1tx/": [
         "TonyRL"
+    ],
+    "/vcb-s/": [
+        "cxfksword"
+    ],
+    "/vcb-s/category/:cate": [
+        "cxfksword"
     ],
     "/verfghbw/press/:keyword?": [
         "quinn-dev"
