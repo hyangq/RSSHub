@@ -1,4 +1,4 @@
-FROM node:18-bullseye as dep-builder
+FROM node:18-bullseye AS dep-builder
 # Here we use the non-slim image to provide build-time deps (compilers and python), thus no need to install later.
 # This effectively speeds up qemu-based cross-build.
 
@@ -11,22 +11,24 @@ RUN \
     if [ "$USE_CHINA_NPM_REGISTRY" = 1 ]; then \
         echo 'use npm mirror' && \
         npm config set registry https://registry.npmmirror.com && \
-        yarn config set registry https://registry.npmmirror.com ; \
+        yarn config set registry https://registry.npmmirror.com && \
+        pnpm config set registry https://registry.npmmirror.com ; \
     fi;
 
-COPY ./yarn.lock /app/
+COPY ./pnpm-lock.yaml /app/
 COPY ./package.json /app/
 
 # lazy install Chromium to avoid cache miss, only install production dependencies to minimize the image size
 RUN \
     set -ex && \
-    export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true && \
-    yarn install --production --frozen-lockfile --network-timeout 1000000 && \
-    yarn cache clean
+    export PUPPETEER_SKIP_DOWNLOAD=true && \
+    corepack enable pnpm && \
+    pnpm install --prod --frozen-lockfile && \
+    pnpm rb
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-FROM debian:bullseye-slim as dep-version-parser
+FROM debian:bullseye-slim AS dep-version-parser
 # This stage is necessary to limit the cache miss scope.
 # With this stage, any modification to package.json won't break the build cache of the next two stages as long as the
 # version unchanged.
@@ -42,7 +44,7 @@ RUN \
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-FROM node:18-bullseye-slim as docker-minifier
+FROM node:18-bullseye-slim AS docker-minifier
 # The stage is used to further reduce the image size by removing unused files.
 
 WORKDIR /minifier
@@ -53,10 +55,11 @@ RUN \
     set -ex && \
     if [ "$USE_CHINA_NPM_REGISTRY" = 1 ]; then \
         npm config set registry https://registry.npmmirror.com && \
-        yarn config set registry https://registry.npmmirror.com ; \
+        yarn config set registry https://registry.npmmirror.com && \
+        pnpm config set registry https://registry.npmmirror.com ; \
     fi; \
-    yarn add @vercel/nft@$(cat .nft_version) fs-extra@$(cat .fs_extra_version) && \
-    yarn cache clean
+    corepack enable pnpm && \
+    pnpm add @vercel/nft@$(cat .nft_version) fs-extra@$(cat .fs_extra_version) --save-prod
 
 COPY . /app
 COPY --from=dep-builder /app /app
@@ -74,7 +77,7 @@ RUN \
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-FROM node:18-bullseye-slim as chromium-downloader
+FROM node:18-bullseye-slim AS chromium-downloader
 # This stage is necessary to improve build concurrency and minimize the image size.
 # Yeah, downloading Chromium never needs those dependencies below.
 
@@ -84,27 +87,29 @@ COPY --from=dep-version-parser /ver/.puppeteer_version /app/.puppeteer_version
 
 ARG TARGETPLATFORM
 ARG USE_CHINA_NPM_REGISTRY=0
-ARG PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+ARG PUPPETEER_SKIP_DOWNLOAD=1
 # The official recommended way to use Puppeteer on x86(_64) is to use the bundled Chromium from Puppeteer:
 # https://pptr.dev/faq#q-why-doesnt-puppeteer-vxxx-work-with-chromium-vyyy
 RUN \
     set -ex ; \
-    if [ "$PUPPETEER_SKIP_CHROMIUM_DOWNLOAD" = 0 ] && [ "$TARGETPLATFORM" = 'linux/amd64' ]; then \
+    if [ "$PUPPETEER_SKIP_DOWNLOAD" = 0 ] && [ "$TARGETPLATFORM" = 'linux/amd64' ]; then \
         if [ "$USE_CHINA_NPM_REGISTRY" = 1 ]; then \
             npm config set registry https://registry.npmmirror.com && \
-            yarn config set registry https://registry.npmmirror.com ; \
+            yarn config set registry https://registry.npmmirror.com && \
+            pnpm config set registry https://registry.npmmirror.com ; \
         fi; \
         echo 'Downloading Chromium...' && \
-        unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD && \
-        yarn add puppeteer@$(cat /app/.puppeteer_version) && \
-        yarn cache clean ; \
+        unset PUPPETEER_SKIP_DOWNLOAD && \
+        corepack enable pnpm && \
+        pnpm add puppeteer@$(cat /app/.puppeteer_version) --save-prod && \
+        pnpm rb ; \
     else \
         mkdir -p /app/node_modules/.cache/puppeteer ; \
     fi;
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-FROM node:18-bullseye-slim as app
+FROM node:18-bullseye-slim AS app
 
 LABEL org.opencontainers.image.authors="https://github.com/DIYgod/RSSHub"
 
@@ -115,7 +120,7 @@ WORKDIR /app
 
 # install deps first to avoid cache miss or disturbing buildkit to build concurrently
 ARG TARGETPLATFORM
-ARG PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1
+ARG PUPPETEER_SKIP_DOWNLOAD=1
 # https://pptr.dev/troubleshooting#chrome-headless-doesnt-launch-on-unix
 # https://github.com/puppeteer/puppeteer/issues/7822
 # https://www.debian.org/releases/bullseye/amd64/release-notes/ch-information.en.html#noteworthy-obsolete-packages
@@ -127,7 +132,7 @@ RUN \
     apt-get install -yq --no-install-recommends \
         dumb-init \
     ; \
-    if [ "$PUPPETEER_SKIP_CHROMIUM_DOWNLOAD" = 0 ]; then \
+    if [ "$PUPPETEER_SKIP_DOWNLOAD" = 0 ]; then \
         if [ "$TARGETPLATFORM" = 'linux/amd64' ]; then \
             apt-get install -yq --no-install-recommends \
                 ca-certificates fonts-liberation wget xdg-utils \
@@ -149,7 +154,7 @@ COPY --from=chromium-downloader /app/node_modules/.cache/puppeteer /app/node_mod
 # if grep matches nothing then it will exit with 1, thus, we cannot `set -e` here
 RUN \
     set -x && \
-    if [ "$PUPPETEER_SKIP_CHROMIUM_DOWNLOAD" = 0 ] && [ "$TARGETPLATFORM" = 'linux/amd64' ]; then \
+    if [ "$PUPPETEER_SKIP_DOWNLOAD" = 0 ] && [ "$TARGETPLATFORM" = 'linux/amd64' ]; then \
         echo 'Verifying Chromium installation...' && \
         ldd $(find /app/node_modules/.cache/puppeteer/ -name chrome -type f) | grep "not found" ; \
         if [ "$?" = 0 ]; then \
