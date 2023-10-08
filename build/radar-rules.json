@@ -20428,6 +20428,19 @@
       }
     ]
   },
+  "paulgraham.com": {
+    "_name": "Paul Graham",
+    ".": [
+      {
+        "title": "Essays",
+        "docs": "https://docs.rsshub.app/routes/blog#paulgraham-essays",
+        "source": [
+          "/articles.html"
+        ],
+        "target": "/paulgraham/articles"
+      }
+    ]
+  },
   "penguinrandomhouse.com": {
     "_name": "Penguin Random House",
     ".": [
@@ -21993,6 +22006,17 @@
           "/"
         ],
         "target": "/scau/yzb"
+      }
+    ],
+    "yjsy": [
+      {
+        "title": "研究生院通知",
+        "docs": "https://docs.rsshub.app/routes/university#hua-nan-nong-ye-da-xue",
+        "source": [
+          "/208/list.htm",
+          "/"
+        ],
+        "target": "/scau/yjsy"
       }
     ]
   },
